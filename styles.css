@@ -9,9 +9,10 @@ body{
   color:white;
   min-height:100vh;
   background: radial-gradient(circle, #0f2e1c, #050d08);
-  overflow:hidden;
+  overflow-x:hidden;
 }
 
+/* 🌌 SLIDER */
 .slider{
   display:flex;
   width:200%;
@@ -21,6 +22,7 @@ body{
 
 .slide{
   width:50%;
+  min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -29,12 +31,13 @@ body{
 
 /* 🎟️ TICKET VIP */
 .ticket{
-  width:320px;
+  width:90%;
+  max-width:380px;
   background: linear-gradient(135deg, #1b1b1b, #0f0f0f);
   border-radius:20px;
   overflow:hidden;
-  box-shadow:0 0 25px rgba(255,215,0,0.15);
   border:1px solid rgba(255,215,0,0.3);
+  box-shadow:0 0 25px rgba(255,215,0,0.15);
 }
 
 .ticket-header{
@@ -64,34 +67,30 @@ body{
 }
 
 .ticket-body h1{
-  font-size:1.3rem;
-  background: linear-gradient(90deg, #fff, #ffd700);
+  font-size:clamp(1.1rem,4vw,1.4rem);
+  background: linear-gradient(90deg,#fff,#ffd700);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
 .subtitle{
-  margin-top:10px;
   opacity:0.8;
+  margin-top:10px;
 }
 
 .ticket-info{
   margin-top:15px;
-  font-size:14px;
-  opacity:0.9;
+  font-size:clamp(0.85rem,3vw,1rem);
 }
 
-.ticket-footer{
-  padding:15px;
-}
-
-/* 🧾 FORM CARD */
+/* 🧾 FORM */
 .card{
+  width:90%;
+  max-width:380px;
   background:rgba(255,255,255,0.08);
   backdrop-filter:blur(10px);
   padding:20px;
   border-radius:20px;
-  width:320px;
 }
 
 h2{
@@ -102,11 +101,12 @@ h2{
 /* 🎯 BOTONES */
 .btn{
   width:100%;
-  padding:12px;
+  padding:14px;
   border:none;
   border-radius:12px;
   font-weight:700;
   cursor:pointer;
+  font-size:clamp(0.9rem,3vw,1rem);
 }
 
 .btn-primary{
@@ -131,3 +131,11 @@ select{
 }
 
 select option{color:black;}
+
+/* 📱 MOBILE */
+@media (max-width:480px){
+  .ticket,
+  .card{
+    width:95%;
+  }
+}

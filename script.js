@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("form").addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const nombre = select.value;
+    const nombre = document.getElementById("nombre").value;
     const plato = document.getElementById("plato").value;
 
     const mensaje = `🎉 *VIP CONFIRMACIÓN*
