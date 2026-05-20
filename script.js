@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const invitados = [
     "ARROYO MAURATE VALENTINA RAFAELA",
     "CANO VANINI RENZO JULIAN",
