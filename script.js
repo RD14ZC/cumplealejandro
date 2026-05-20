@@ -31,14 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🎵 música
   const musica = document.getElementById("musica");
-  document.addEventListener("click", () => {
+
+  document.getElementById("btnNext").addEventListener("click", () => {
     musica.volume = 0.4;
     musica.play().catch(()=>{});
-  }, { once:true });
 
-  // 🎟️ SLIDE
-  document.getElementById("btnNext").addEventListener("click", () => {
-    document.querySelector(".slider").style.transform = "translateX(-50%)";
+    document.querySelector(".slider").scrollTo({
+      left: window.innerWidth,
+      behavior: "smooth"
+    });
   });
 
   // 💬 WhatsApp
@@ -48,15 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const nombre = document.getElementById("nombre").value;
     const plato = document.getElementById("plato").value;
 
-    const mensaje = `🎉 *VIP CONFIRMACIÓN*
+    const mensaje = `🎉 CONFIRMACIÓN VIP 15 AÑOS
 
 👤 ${nombre}
 🍽️ ${plato}
 
-🎟️ Invitación 15 años`;
+💌 ¡Nos vemos en la fiesta!`;
 
-    window.location.href =
-      `https://wa.me/51958680138?text=${encodeURIComponent(mensaje)}`;
+    window.open(
+      `https://wa.me/51958680138?text=${encodeURIComponent(mensaje)}`,
+      "_blank"
+    );
   });
 
 });
