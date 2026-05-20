@@ -135,7 +135,6 @@ canvas{
   flex-direction:column;
   justify-content:center;
 }
-
 /* BOTONES */
 .btn{
   width:100%;
@@ -147,7 +146,6 @@ canvas{
   font-size:1.1rem;
   transition:.2s;
 }
-
 .btn:active{
   transform:scale(0.97);
 }
@@ -159,7 +157,6 @@ canvas{
   background:#25D366;
   color:white;
 }
-
 /* FORM */
 select{
   width:100%;
@@ -170,7 +167,6 @@ select{
   background:rgba(255,255,255,0.1);
   color:white;
 }
-
 /* MOBILE */
 @media (max-width:480px){
   .ticket,

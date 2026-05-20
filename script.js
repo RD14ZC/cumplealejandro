@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth"
     });
   });
-
   // 💬 WhatsApp
   document.getElementById("form").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -45,12 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const plato = document.getElementById("plato").value;
 
     const mensaje = `🎉 CONFIRMACIÓN VIP 15 AÑOS
-
 👤 ${nombre}
 🍽️ ${plato}
-
 💌 ¡Nos vemos en la fiesta!`;
-
     window.open(
       `https://wa.me/51958680138?text=${encodeURIComponent(mensaje)}`,
       "_blank"
