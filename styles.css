@@ -29,84 +29,101 @@ body{
   padding:20px;
 }
 
-/* 🎟️ TICKET VIP */
+/* 🎟️ TICKET GRANDE VIP */
 .ticket{
-  width:90%;
-  max-width:380px;
+  width:95%;
+  max-width:520px;
+  min-height:700px;
   background: linear-gradient(135deg, #1b1b1b, #0f0f0f);
-  border-radius:20px;
+  border-radius:28px;
   overflow:hidden;
-  border:1px solid rgba(255,215,0,0.3);
-  box-shadow:0 0 25px rgba(255,215,0,0.15);
+  border:1px solid rgba(255,215,0,0.35);
+  box-shadow:0 0 35px rgba(255,215,0,0.2);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
 .ticket-header{
   display:flex;
   justify-content:space-between;
-  padding:15px;
+  padding:18px;
   background:#111;
 }
 
 .vip{
   color:#ffd700;
   font-weight:700;
+  font-size:1rem;
 }
 
 .badge{
   background:#2cc56f;
-  padding:5px 10px;
+  padding:6px 12px;
   border-radius:999px;
   font-size:12px;
   color:black;
   font-weight:700;
 }
 
+/* 🧠 CONTENIDO */
 .ticket-body{
-  padding:20px;
+  padding:25px;
   text-align:center;
 }
 
 .ticket-body h1{
-  font-size:clamp(1.1rem,4vw,1.4rem);
+  font-size:1.8rem;
+  line-height:1.3;
   background: linear-gradient(90deg,#fff,#ffd700);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
 .subtitle{
-  opacity:0.8;
   margin-top:10px;
+  font-size:1.05rem;
+  opacity:0.85;
 }
 
 .ticket-info{
-  margin-top:15px;
-  font-size:clamp(0.85rem,3vw,1rem);
+  margin-top:20px;
 }
 
-/* 🧾 FORM */
+.ticket-info p{
+  font-size:1.15rem;
+  margin:8px 0;
+}
+
+/* 🧾 FORM GRANDE */
 .card{
-  width:90%;
-  max-width:380px;
+  width:95%;
+  max-width:520px;
+  min-height:650px;
   background:rgba(255,255,255,0.08);
   backdrop-filter:blur(10px);
-  padding:20px;
-  border-radius:20px;
+  padding:25px;
+  border-radius:28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
 h2{
   text-align:center;
-  margin-bottom:15px;
+  margin-bottom:20px;
+  font-size:1.5rem;
 }
 
 /* 🎯 BOTONES */
 .btn{
   width:100%;
-  padding:14px;
+  padding:16px;
   border:none;
-  border-radius:12px;
+  border-radius:14px;
   font-weight:700;
   cursor:pointer;
-  font-size:clamp(0.9rem,3vw,1rem);
+  font-size:1.1rem;
 }
 
 .btn-primary{
@@ -122,12 +139,13 @@ h2{
 /* FORM */
 select{
   width:100%;
-  padding:12px;
+  padding:14px;
   margin:10px 0;
-  border-radius:10px;
+  border-radius:12px;
   border:none;
   background:rgba(255,255,255,0.1);
   color:white;
+  font-size:1rem;
 }
 
 select option{color:black;}
@@ -136,6 +154,11 @@ select option{color:black;}
 @media (max-width:480px){
   .ticket,
   .card{
-    width:95%;
+    width:100%;
+    min-height:85vh;
+  }
+
+  .ticket-body h1{
+    font-size:1.5rem;
   }
 }
