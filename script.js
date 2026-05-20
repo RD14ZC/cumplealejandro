@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const nombres = [
+  const invitados = [
     "ARROYO MAURATE VALENTINA RAFAELA",
     "CANO VANINI RENZO JULIAN",
     "CASAS SINCHE BRIGITH THALIA",
@@ -20,49 +20,43 @@ document.addEventListener("DOMContentLoaded", () => {
     "URBANO MAGUIÑA HEISEL NAOMI"
   ];
 
-  const selectNombre = document.getElementById("nombre");
+  const select = document.getElementById("nombre");
 
-  nombres.forEach(n => {
+  invitados.forEach(n => {
     const opt = document.createElement("option");
     opt.value = n;
     opt.textContent = n;
-    selectNombre.appendChild(opt);
+    select.appendChild(opt);
   });
 
   // 🎵 música
   const musica = document.getElementById("musica");
-
-  document.addEventListener("click", function playMusic(){
+  document.addEventListener("click", () => {
     musica.volume = 0.4;
     musica.play().catch(()=>{});
   }, { once:true });
 
-  // 📩 transición entre “pantallas”
-  document.getElementById("btnAbrir").addEventListener("click", () => {
-    document.getElementById("mainCard").style.opacity = "0.3";
-
-    setTimeout(() => {
-      document.getElementById("formCard").classList.remove("hidden");
-      document.getElementById("formCard").scrollIntoView({ behavior:"smooth" });
-    }, 300);
+  // 🎟️ SLIDE
+  document.getElementById("btnNext").addEventListener("click", () => {
+    document.querySelector(".slider").style.transform = "translateX(-50%)";
   });
 
   // 💬 WhatsApp
   document.getElementById("form").addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const nombre = document.getElementById("nombre").value;
+    const nombre = select.value;
     const plato = document.getElementById("plato").value;
 
-    const mensaje = `🎉 *Confirmación de asistencia*
+    const mensaje = `🎉 *VIP CONFIRMACIÓN*
 
 👤 ${nombre}
 🍽️ ${plato}
 
-✨ ¡Nos vemos en la fiesta!`;
+🎟️ Invitación 15 años`;
 
-    const url = `https://wa.me/51958680138?text=${encodeURIComponent(mensaje)}`;
-    window.location.href = url;
+    window.location.href =
+      `https://wa.me/51958680138?text=${encodeURIComponent(mensaje)}`;
   });
 
 });
