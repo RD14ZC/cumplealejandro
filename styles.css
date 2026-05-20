@@ -151,12 +151,10 @@ canvas{
 .btn:active{
   transform:scale(0.97);
 }
-
 .btn-primary{
   background:linear-gradient(135deg,#ffd700,#ffb300);
   color:black;
 }
-
 .btn-whatsapp{
   background:#25D366;
   color:white;

@@ -19,23 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
     "SOLIS QUISPE RIZZOLI ANDREA",
     "URBANO MAGUIÑA HEISEL NAOMI"
   ];
-
   const select = document.getElementById("nombre");
-
   invitados.forEach(n => {
     const opt = document.createElement("option");
     opt.value = n;
     opt.textContent = n;
     select.appendChild(opt);
   });
-
   // 🎵 música
   const musica = document.getElementById("musica");
-
   document.getElementById("btnNext").addEventListener("click", () => {
     musica.volume = 0.4;
     musica.play().catch(()=>{});
-
     document.querySelector(".slider").scrollTo({
       left: window.innerWidth,
       behavior: "smooth"
