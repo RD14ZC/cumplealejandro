@@ -1,65 +1,77 @@
-// 👥 lista de invitados
-const nombres = [
-  "ARROYO MAURATE VALENTINA RAFAELA",
-  "CANO VANINI RENZO JULIAN",
-  "CASAS SINCHE BRIGITH THALIA",
-  "ESTEBAN FLORES MISOL YUMALAY",
-  "ESTEBAN ROSALES MARX GABRIEL",
-  "GARAY AYLAS",
-  "GUILLEN COTERA MARLENY YBONY",
-  "LUJAN VALENCIA LEONARDO JEFFREY",
-  "MADRID SIMEON GERALDINE",
-  "MEJIA INGAROCA EVIAN MIRKO",
-  "POMASUNCO ARIZABAL AUDREY GIA",
-  "RAMIREZ NUÑEZ ADRIANA ISABELA",
-  "RODRIGUEZ AQUINO LUCIANA MURIEL",
-  "ROJAS ARANZAMENDI YANELITA XIMENA",
-  "SANCHEZ SALINAS ALEXANDER STEFAN",
-  "SOLIS QUISPE RIZZOLI ANDREA",
-  "URBANO MAGUIÑA HEISEL NAOMI"
-];
+document.addEventListener("DOMContentLoaded", () => {
 
-// eliminar duplicados por seguridad
-const nombresUnicos = [...new Set(nombres)];
+  // 👥 lista de invitados
+  const nombres = [
+    "ARROYO MAURATE VALENTINA RAFAELA",
+    "CANO VANINI RENZO JULIAN",
+    "CASAS SINCHE BRIGITH THALIA",
+    "ESTEBAN FLORES MISOL YUMALAY",
+    "ESTEBAN ROSALES MARX GABRIEL",
+    "GARAY AYLAS",
+    "GUILLEN COTERA MARLENY YBONY",
+    "LUJAN VALENCIA LEONARDO JEFFREY",
+    "MADRID SIMEON GERALDINE",
+    "MEJIA INGAROCA EVIAN MIRKO",
+    "POMASUNCO ARIZABAL AUDREY GIA",
+    "RAMIREZ NUÑEZ ADRIANA ISABELA",
+    "RODRIGUEZ AQUINO LUCIANA MURIEL",
+    "ROJAS ARANZAMENDI YANELITA XIMENA",
+    "SANCHEZ SALINAS ALEXANDER STEFAN",
+    "SOLIS QUISPE RIZZOLI ANDREA",
+    "URBANO MAGUIÑA HEISEL NAOMI"
+  ];
 
-const selectNombre = document.getElementById("nombre");
+  const nombresUnicos = [...new Set(nombres)];
 
-// cargar nombres
-nombresUnicos.forEach(n => {
-  const opt = document.createElement("option");
-  opt.value = n;
-  opt.textContent = n;
-  selectNombre.appendChild(opt);
-});
+  const selectNombre = document.getElementById("nombre");
 
-// mostrar formulario
-const formCard = document.getElementById("formCard");
+  nombresUnicos.forEach(n => {
+    const opt = document.createElement("option");
+    opt.value = n;
+    opt.textContent = n;
+    selectNombre.appendChild(opt);
+  });
 
-document.getElementById("btnAbrir").addEventListener("click", () => {
-  formCard.classList.remove("hidden");
-  formCard.scrollIntoView({ behavior: "smooth" });
-});
+  // mostrar formulario
+  const formCard = document.getElementById("formCard");
+  const btnAbrir = document.getElementById("btnAbrir");
 
-// enviar WhatsApp
-document.getElementById("form").addEventListener("submit", (e) => {
-  e.preventDefault();
+  btnAbrir.addEventListener("click", () => {
+    formCard.classList.remove("hidden");
+    formCard.scrollIntoView({ behavior: "smooth" });
+  });
 
-  const nombre = document.getElementById("nombre").value;
-  const plato = document.getElementById("plato").value;
+  // enviar WhatsApp
+  document.getElementById("form").addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  if (!nombre || !plato) {
-    alert("Por favor completa todos los campos");
-    return;
-  }
+    const nombre = document.getElementById("nombre").value;
+    const plato = document.getElementById("plato").value;
+    const btn = e.target.querySelector("button");
 
-  const mensaje = `🎉 Confirmación de asistencia
+    if (!nombre || !plato) {
+      alert("Por favor completa todos los campos");
+      return;
+    }
 
-Nombre: ${nombre}
-Plato: ${plato}
+    btn.disabled = true;
+    btn.textContent = "Enviando...";
 
-¡Nos vemos en la fiesta! 🎊`;
+    const mensaje = `🎉 *Confirmación de asistencia*
 
-  const url = `https://wa.me/51958680138?text=${encodeURIComponent(mensaje)}`;
+👤 Nombre: ${nombre}
+🍽️ Plato: ${plato}
 
-  window.open(url, "_blank");
+✨ ¡Nos vemos en la fiesta! 🎊`;
+
+    const url = `https://wa.me/51958680138?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
+
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.textContent = "Enviar por WhatsApp 💬";
+    }, 2000);
+  });
+
 });
