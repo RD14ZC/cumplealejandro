@@ -1,4 +1,4 @@
-// 👥 lista de nombres
+// 👥 lista de invitados
 const nombres = [
   "ARROYO MAURATE VALENTINA RAFAELA",
   "CANO VANINI RENZO JULIAN",
@@ -16,13 +16,16 @@ const nombres = [
   "ROJAS ARANZAMENDI YANELITA XIMENA",
   "SANCHEZ SALINAS ALEXANDER STEFAN",
   "SOLIS QUISPE RIZZOLI ANDREA",
-  "URBANO MAGUIÑA HEISEL NAHOMI"
+  "URBANO MAGUIÑA HEISEL NAOMI"
 ];
 
-// cargar nombres
+// eliminar duplicados por seguridad
+const nombresUnicos = [...new Set(nombres)];
+
 const selectNombre = document.getElementById("nombre");
 
-nombres.forEach(n=>{
+// cargar nombres
+nombresUnicos.forEach(n => {
   const opt = document.createElement("option");
   opt.value = n;
   opt.textContent = n;
@@ -30,23 +33,31 @@ nombres.forEach(n=>{
 });
 
 // mostrar formulario
-document.getElementById("btnAbrir").addEventListener("click",()=>{
-  document.getElementById("formCard").classList.remove("hidden");
+const formCard = document.getElementById("formCard");
+
+document.getElementById("btnAbrir").addEventListener("click", () => {
+  formCard.classList.remove("hidden");
+  formCard.scrollIntoView({ behavior: "smooth" });
 });
 
 // enviar WhatsApp
-document.getElementById("form").addEventListener("submit",(e)=>{
+document.getElementById("form").addEventListener("submit", (e) => {
   e.preventDefault();
 
   const nombre = document.getElementById("nombre").value;
   const plato = document.getElementById("plato").value;
+
+  if (!nombre || !plato) {
+    alert("Por favor completa todos los campos");
+    return;
+  }
 
   const mensaje = `🎉 Confirmación de asistencia
 
 Nombre: ${nombre}
 Plato: ${plato}
 
-¡Nos vemos en la fiesta!`;
+¡Nos vemos en la fiesta! 🎊`;
 
   const url = `https://wa.me/51958680138?text=${encodeURIComponent(mensaje)}`;
 

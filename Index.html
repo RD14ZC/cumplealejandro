@@ -12,7 +12,7 @@
 
 <body>
 
-<div class="container">
+<main class="container">
 
   <div class="card">
 
@@ -25,19 +25,9 @@
     </p>
 
     <div class="info">
-
-      <div class="info-item">
-        📅 Domingo 24 de Mayo 2026
-      </div>
-
-      <div class="info-item">
-        🕐 1:00 PM
-      </div>
-
-      <div class="info-item">
-        📍 Jr Alfonso Ugarte 725 - Jauja
-      </div>
-
+      <div class="info-item">📅 Domingo 24 de Mayo 2026</div>
+      <div class="info-item">🕐 1:00 PM</div>
+      <div class="info-item">📍 Jr Alfonso Ugarte 725 - Jauja</div>
     </div>
 
     <button class="btn" id="btnAbrir">
@@ -53,17 +43,16 @@
 
     <form id="form">
 
-      <label>Nombre</label>
+      <label for="nombre">Nombre</label>
       <select id="nombre" required>
-        <option value="">Selecciona tu nombre</option>
+        <option value="" disabled selected>Selecciona tu nombre</option>
       </select>
 
-      <label>Plato favorito</label>
+      <label for="plato">Plato favorito</label>
       <select id="plato" required>
-        <option value="">Selecciona un plato</option>
-        <option>Milanesa de pollo</option>
-        <option>Arroz chaufa</option>
-        <option>Pollo a la brasa</option>
+        <option value="" disabled selected>Selecciona un plato</option>
+        <option value="Milanesa de pollo">MILANESA DE POLLO</option>
+        <option value="Pollo a la plancha">POLLO A LA PLANCHA</option>
       </select>
 
       <button class="btn" type="submit">
@@ -74,7 +63,7 @@
 
   </div>
 
-</div>
+</main>
 
 <script src="script.js"></script>
 
