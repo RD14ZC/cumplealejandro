@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VIP 15 Años</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
 <canvas id="particles"></canvas>
+
 <audio id="musica" loop>
   <source src="https://dark-wire.com/music/Up_Is_Down.mp3" type="audio/mpeg">
 </audio>
+
 <main class="slider">
+
   <!-- 🎟️ TICKET -->
   <section class="slide">
     <div class="ticket">
       <div class="ticket-header">
-        <span class="vip">VIP INVITACION</span>
-        <span class="badge">MI CUMPLEAÑO</span>
+        <span class="vip">VIP INVITACIÓN</span>
+        <span class="badge">15 AÑOS</span>
       </div>
+
       <div class="ticket-body">
         <h1>Alejandro Joaquín Díaz Capcha</h1>
         <p class="subtitle">INVITACIÓN OFICIAL 🎉</p>
@@ -31,6 +37,7 @@
           <p>📍 Restaurante KAUSA - Jauja</p>
         </div>
       </div>
+
       <div class="ticket-footer">
         <button class="btn btn-primary" id="btnNext">
           ABRIR INVITACIÓN 🎟️
@@ -38,19 +45,19 @@
       </div>
     </div>
   </section>
+
   <!-- 📩 FORM -->
   <section class="slide">
     <div class="card">
-
       <h2>Confirmar asistencia</h2>
-      <form id="form">
 
+      <form id="form">
         <label>Nombre</label>
         <select id="nombre" required></select>
 
         <label>Plato favorito</label>
         <select id="plato" required>
-          <option value="" disabled selected>Selecciona</option>
+          <option value="" disabled selected>Selecciona tu plato</option>
           <option value="Milanesa de pollo">MILANESA DE POLLO</option>
           <option value="Pollo a la plancha">POLLO A LA PLANCHA</option>
         </select>
@@ -58,12 +65,12 @@
         <button class="btn btn-whatsapp" type="submit">
           Enviar WhatsApp 💬
         </button>
-
       </form>
-
     </div>
   </section>
+
 </main>
+
 <script src="script.js"></script>
 </body>
 </html>

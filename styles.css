@@ -3,15 +3,18 @@
   padding:0;
   box-sizing:border-box;
 }
+
 body{
   font-family:'Poppins',sans-serif;
   color:white;
   min-height:100vh;
-  background: radial-gradient(circle, #0f2e1c, #050d08);
   overflow-x:hidden;
+  background:
+    radial-gradient(circle at top,#123d25,transparent 60%),
+    radial-gradient(circle at bottom,#050d08,#020504);
 }
 
-/* 🌌 PARTICULAS */
+/* 🌌 canvas */
 canvas{
   position:fixed;
   top:0;
@@ -19,43 +22,46 @@ canvas{
   z-index:-1;
 }
 
-/* 🌌 SLIDER */
+/* slider */
 .slider{
   display:flex;
   width:100%;
   overflow:hidden;
+  scroll-behavior:smooth;
 }
 
 .slide{
   flex:0 0 100%;
-  height:100vh;
+  min-height:100vh;
+  min-height:100dvh;
   display:flex;
   justify-content:center;
   align-items:center;
   padding:20px;
 }
 
-/* 🎟️ TICKET */
+/* 🎟️ ticket */
 .ticket{
   width:95%;
   max-width:520px;
-  min-height:700px;
-  background: linear-gradient(135deg, #1b1b1b, #0f0f0f);
+  min-height:680px;
+  background:linear-gradient(135deg,#1b1b1b,#0f0f0f);
   border-radius:28px;
   border:1px solid rgba(255,215,0,0.35);
-  box-shadow:0 0 35px rgba(255,215,0,0.2);
+  box-shadow:0 0 35px rgba(255,215,0,0.15);
   display:flex;
   flex-direction:column;
   justify-content:space-between;
   position:relative;
-  transition:.3s;
+  transition:.25s ease;
 }
 
 .ticket:hover{
-  transform:scale(1.01);
+  transform:translateY(-5px) scale(1.01);
+  box-shadow:0 0 55px rgba(255,215,0,0.25);
 }
 
-/* perforaciones ticket */
+/* perforaciones */
 .ticket::before,
 .ticket::after{
   content:"";
@@ -66,12 +72,13 @@ canvas{
   background:#050d08;
   border-radius:50%;
   transform:translateY(-50%);
+  box-shadow:0 0 10px rgba(0,0,0,0.6);
 }
 
 .ticket::before{ left:-10px; }
 .ticket::after{ right:-10px; }
 
-/* HEADER */
+/* header */
 .ticket-header{
   display:flex;
   justify-content:space-between;
@@ -92,23 +99,19 @@ canvas{
   font-weight:700;
 }
 
-/* BODY */
+/* body */
 .ticket-body{
   padding:25px;
   text-align:center;
 }
 
-/* 🌟 TEXTO VIP (CORREGIDO SIN ERROR) */
 .ticket-body h1{
   font-size:1.8rem;
   line-height:1.3;
-
-  background: linear-gradient(90deg,#ffffff,#ffd700);
-  background-clip:text;
+  background:linear-gradient(90deg,#fff,#ffd700);
   -webkit-background-clip:text;
-
-  color:transparent;
   -webkit-text-fill-color:transparent;
+  text-shadow:0 0 15px rgba(255,215,0,0.15);
 }
 
 .subtitle{
@@ -121,20 +124,21 @@ canvas{
   margin:8px 0;
 }
 
-/* CARD */
+/* card */
 .card{
   width:95%;
   max-width:520px;
   min-height:650px;
   background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
   padding:25px;
   border-radius:28px;
   display:flex;
   flex-direction:column;
   justify-content:center;
 }
-/* BOTONES */
+
+/* buttons */
 .btn{
   width:100%;
   padding:16px;
@@ -145,32 +149,45 @@ canvas{
   font-size:1.1rem;
   transition:.2s;
 }
+
 .btn:active{
   transform:scale(0.97);
 }
+
 .btn-primary{
   background:linear-gradient(135deg,#ffd700,#ffb300);
   color:black;
 }
+
 .btn-whatsapp{
   background:#25D366;
   color:white;
 }
-/* FORM */
+
+.btn:hover{
+  filter:brightness(1.1);
+}
+
+/* form */
 select{
   width:100%;
   padding:14px;
   margin:10px 0;
   border-radius:12px;
   border:1px solid rgba(255,255,255,0.15);
-  background:rgba(255,255,255,0.1);
+  background:rgba(0,0,0,0.4);
   color:white;
+  outline:none;
 }
-/* MOBILE */
+
+select option{
+  color:black;
+}
+
+/* mobile */
 @media (max-width:480px){
   .ticket,
   .card{
-    max-width:420px;
     min-height:85vh;
   }
 }
