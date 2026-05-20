@@ -29,14 +29,22 @@ document.addEventListener("DOMContentLoaded", () => {
     selectNombre.appendChild(opt);
   });
 
-  const formCard = document.getElementById("formCard");
-  const btnAbrir = document.getElementById("btnAbrir");
+  // 🎵 música
+  const musica = document.getElementById("musica");
+  document.body.addEventListener("click", () => {
+    musica.volume = 0.4;
+    musica.play();
+  }, { once:true });
 
-  btnAbrir.addEventListener("click", () => {
+  // mostrar formulario
+  const formCard = document.getElementById("formCard");
+
+  document.getElementById("btnAbrir").addEventListener("click", () => {
     formCard.classList.remove("hidden");
-    formCard.scrollIntoView({ behavior: "smooth" });
+    formCard.scrollIntoView({ behavior:"smooth" });
   });
 
+  // WhatsApp
   document.getElementById("form").addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -45,14 +53,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const mensaje = `🎉 Confirmación de asistencia
 
-👤 Nombre: ${nombre}
-🍽️ Plato: ${plato}
+👤 ${nombre}
+🍽️ ${plato}
 
-✨ ¡Nos vemos en la fiesta! 🎊`;
+✨ ¡Nos vemos en la fiesta!`;
 
-    const url = `https://wa.me/51958680138?text=${encodeURIComponent(mensaje)}`;
-
-    window.open(url, "_blank");
+    window.open(
+      `https://wa.me/51958680138?text=${encodeURIComponent(mensaje)}`,
+      "_blank"
+    );
   });
 
 });

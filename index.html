@@ -12,8 +12,13 @@
 
 <body>
 
-<!-- 🌟 fondo animado -->
+<!-- 🌈 fondo animado -->
 <canvas id="particles"></canvas>
+
+<!-- 🎵 música -->
+<audio id="musica" loop>
+  <source src="https://dark-wire.com/music/Up_Is_Down.mp3" type="audio/mpeg">
+</audio>
 
 <main class="container">
 
@@ -28,19 +33,26 @@
     </p>
 
     <div class="info">
+
       <div class="info-item">📅 Domingo 24 de Mayo 2026</div>
       <div class="info-item">🕐 1:00 PM</div>
-      <div class="info-item">📍 Jr Alfonso Ugarte 725 - Jauja / RESTAURANTE KAUSA</div>
 
       <div class="info-item">
-        📍 Ubicación:
+        📍 Jr Alfonso Ugarte 725 - Jauja<br>
+        🍽️ Restaurante KAUSA
+      </div>
+
+      <div class="info-item">
+        📍 Ubicación:<br>
         <a class="map-link" href="https://maps.app.goo.gl/o17wT8WZELk92eV28" target="_blank">
           Ver en Google Maps 🗺️
         </a>
       </div>
+
     </div>
 
-    <button class="btn" id="btnAbrir">
+    <!-- 🌟 BOTÓN PRINCIPAL -->
+    <button class="btn btn-primary" id="btnAbrir">
       Confirmar asistencia 🎉
     </button>
 
@@ -65,7 +77,8 @@
         <option value="Pollo a la plancha">POLLO A LA PLANCHA</option>
       </select>
 
-      <button class="btn" type="submit">
+      <!-- 🟢 BOTÓN WHATSAPP -->
+      <button class="btn btn-whatsapp" type="submit">
         Enviar por WhatsApp 💬
       </button>
 
