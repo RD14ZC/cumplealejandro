@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>15 Años</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="card">
+
+    <div class="badge">15 AÑOS</div>
+
+    <h1>Alejandro Joaquín Díaz Capcha</h1>
+
+    <p class="subtitle">
+      Estimado(a) amigo(a), estoy próximo a cumplir 15 años y me encantaría compartir una tarde especial contigo ✨
+    </p>
+
+    <div class="info">
+
+      <div class="info-item">
+        📅 Domingo 24 de Mayo 2026
+      </div>
+
+      <div class="info-item">
+        🕐 1:00 PM
+      </div>
+
+      <div class="info-item">
+        📍 Jr Alfonso Ugarte 725 - Jauja
+      </div>
+
+    </div>
+
+    <button class="btn" id="btnAbrir">
+      Confirmar asistencia 🎉
+    </button>
+
+  </div>
+
+  <!-- FORMULARIO -->
+  <div class="card hidden" id="formCard">
+
+    <h2>Confirmación</h2>
+
+    <form id="form">
+
+      <label>Nombre</label>
+      <select id="nombre" required>
+        <option value="">Selecciona tu nombre</option>
+      </select>
+
+      <label>Plato favorito</label>
+      <select id="plato" required>
+        <option value="">Selecciona un plato</option>
+        <option>Milanesa de pollo</option>
+        <option>Arroz chaufa</option>
+        <option>Pollo a la brasa</option>
+      </select>
+
+      <button class="btn" type="submit">
+        Enviar por WhatsApp 💬
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
