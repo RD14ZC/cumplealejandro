@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VIP 15 Años</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Invitación 15 Años 🎉</title>
+
+  <!-- 🌿 TIPOGRAFÍAS -->
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Alegreya+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -19,53 +22,62 @@
 
 <main class="slider">
 
-  <!-- 🎟️ TICKET -->
+  <!-- 🎉 PORTADA -->
   <section class="slide">
-    <div class="ticket">
-      <div class="ticket-header">
-        <span class="vip">VIP INVITACIÓN</span>
-        <span class="badge">15 AÑOS</span>
+    <div class="card hero-card">
+
+      <div class="emoji">🎉💚🎂</div>
+
+      <h1>¡Estás invitado!</h1>
+
+      <p class="subtitle">
+        15 años de<br>
+        <b>Alejandro Joaquín Díaz Capcha</b>
+      </p>
+
+      <div class="info">
+        <p>📅 Domingo 24 Mayo 2026</p>
+        <p>🕐 1:00 PM</p>
+        <p>
+          📍 Restaurante KAUSA - Jauja<br>
+          <a class="map-btn" href="https://maps.app.goo.gl/zjE2uhNwmMkg4pGL8" target="_blank">
+            Ver ubicación 🗺️
+          </a>
+        </p>
       </div>
 
-      <div class="ticket-body">
-        <h1>Alejandro Joaquín Díaz Capcha</h1>
-        <p class="subtitle">INVITACIÓN OFICIAL 🎉</p>
+      <button class="btn btn-primary" id="btnNext">
+        Abrir invitación 🎟️
+      </button>
 
-        <div class="ticket-info">
-          <p>📅 Domingo 24 Mayo 2026</p>
-          <p>🕐 1:00 PM</p>
-          <p>📍 Restaurante KAUSA - Jauja</p>
-        </div>
-      </div>
-
-      <div class="ticket-footer">
-        <button class="btn btn-primary" id="btnNext">
-          ABRIR INVITACIÓN 🎟️
-        </button>
-      </div>
     </div>
   </section>
 
-  <!-- 📩 FORM -->
+  <!-- 📩 CONFIRMACIÓN -->
   <section class="slide">
     <div class="card">
+
       <h2>Confirmar asistencia</h2>
+      <p class="subtitle">¡Te esperamos! 💚</p>
 
       <form id="form">
-        <label>Nombre</label>
+
+        <label>Tu nombre</label>
         <select id="nombre" required></select>
 
         <label>Plato favorito</label>
         <select id="plato" required>
-          <option value="" disabled selected>Selecciona tu plato</option>
-          <option value="Milanesa de pollo">MILANESA DE POLLO</option>
-          <option value="Pollo a la plancha">POLLO A LA PLANCHA</option>
+          <option value="" disabled selected>Selecciona</option>
+          <option value="Milanesa de pollo">Milanesa de pollo 🍗</option>
+          <option value="Pollo a la plancha">Pollo a la plancha 🍗</option>
         </select>
 
         <button class="btn btn-whatsapp" type="submit">
-          Enviar WhatsApp 💬
+          Confirmar por WhatsApp 💬
         </button>
+
       </form>
+
     </div>
   </section>
 

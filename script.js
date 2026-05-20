@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const select = document.getElementById("nombre");
 
-  // placeholder
   const placeholder = document.createElement("option");
   placeholder.textContent = "Selecciona tu nombre";
   placeholder.value = "";
@@ -30,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
   placeholder.selected = true;
   select.appendChild(placeholder);
 
-  // llenar lista
   invitados.forEach(n => {
     const opt = document.createElement("option");
     opt.value = n;
@@ -41,12 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const musica = document.getElementById("musica");
   const slider = document.querySelector(".slider");
 
-  // 🎟️ abrir invitación
   document.getElementById("btnNext").addEventListener("click", async () => {
     try {
       musica.volume = 0.4;
       await musica.play();
-    } catch (e) {}
+    } catch {}
 
     slider.scrollTo({
       left: window.innerWidth,
@@ -54,21 +51,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 💬 WhatsApp
   document.getElementById("form").addEventListener("submit", (e) => {
     e.preventDefault();
 
     const nombre = document.getElementById("nombre").value;
     const plato = document.getElementById("plato").value;
 
-    const mensaje = [
-      "🎉 CONFIRMACIÓN VIP 15 AÑOS",
-      "",
-      `👤 Nombre: ${nombre}`,
-      `🍽️ Plato: ${plato}`,
-      "",
-      "💌 ¡Nos vemos en la fiesta!"
-    ].join("\n");
+    const mensaje =
+`🎉 INVITACIÓN 15 AÑOS
+
+👤 ${nombre}
+🍽️ ${plato}
+
+💚 ¡Te esperamos!`;
 
     window.open(
       `https://wa.me/51958680138?text=${encodeURIComponent(mensaje)}`,
