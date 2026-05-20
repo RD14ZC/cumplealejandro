@@ -12,24 +12,23 @@
 
 <body>
 
-<!-- 🌈 fondo animado -->
 <canvas id="particles"></canvas>
 
-<!-- 🎵 música -->
 <audio id="musica" loop>
   <source src="https://dark-wire.com/music/Up_Is_Down.mp3" type="audio/mpeg">
 </audio>
 
 <main class="container">
 
-  <div class="card">
+  <!-- 🟢 INVITACIÓN -->
+  <div class="card" id="mainCard">
 
     <div class="badge">15 AÑOS</div>
 
     <h1>Alejandro Joaquín Díaz Capcha</h1>
 
     <p class="subtitle">
-      Estimado(a) amigo(a), estoy próximo a cumplir 15 años y me encantaría compartir una tarde especial contigo ✨
+      Estás invitado(a) a una tarde muy especial ✨
     </p>
 
     <div class="info">
@@ -43,41 +42,38 @@
       </div>
 
       <div class="info-item">
-        📍 Ubicación:<br>
         <a class="map-link" href="https://maps.app.goo.gl/o17wT8WZELk92eV28" target="_blank">
-          Ver en Google Maps 🗺️
+          Ver ubicación 🗺️
         </a>
       </div>
 
     </div>
 
-    <!-- 🌟 BOTÓN PRINCIPAL -->
-    <button class="btn btn-primary" id="btnAbrir">
+    <button class="btn btn-primary" id="btnAbrir" type="button">
       Confirmar asistencia 🎉
     </button>
 
   </div>
 
-  <!-- FORMULARIO -->
+  <!-- 📩 FORMULARIO -->
   <div class="card hidden" id="formCard">
 
     <h2>Confirmación</h2>
 
     <form id="form">
 
-      <label for="nombre">Nombre</label>
-      <select id="nombre" required>
+      <label>Nombre</label>
+      <select id="nombre" name="nombre" required>
         <option value="" disabled selected>Selecciona tu nombre</option>
       </select>
 
-      <label for="plato">Plato favorito</label>
-      <select id="plato" required>
+      <label>Plato favorito</label>
+      <select id="plato" name="plato" required>
         <option value="" disabled selected>Selecciona un plato</option>
         <option value="Milanesa de pollo">MILANESA DE POLLO</option>
         <option value="Pollo a la plancha">POLLO A LA PLANCHA</option>
       </select>
 
-      <!-- 🟢 BOTÓN WHATSAPP -->
       <button class="btn btn-whatsapp" type="submit">
         Enviar por WhatsApp 💬
       </button>

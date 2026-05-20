@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const selectNombre = document.getElementById("nombre");
 
-  [...new Set(nombres)].forEach(n => {
+  nombres.forEach(n => {
     const opt = document.createElement("option");
     opt.value = n;
     opt.textContent = n;
@@ -31,37 +31,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🎵 música
   const musica = document.getElementById("musica");
-  document.body.addEventListener("click", () => {
+
+  document.addEventListener("click", function playMusic(){
     musica.volume = 0.4;
-    musica.play();
+    musica.play().catch(()=>{});
   }, { once:true });
 
-  // mostrar formulario
-  const formCard = document.getElementById("formCard");
-
+  // 📩 transición entre “pantallas”
   document.getElementById("btnAbrir").addEventListener("click", () => {
-    formCard.classList.remove("hidden");
-    formCard.scrollIntoView({ behavior:"smooth" });
+    document.getElementById("mainCard").style.opacity = "0.3";
+
+    setTimeout(() => {
+      document.getElementById("formCard").classList.remove("hidden");
+      document.getElementById("formCard").scrollIntoView({ behavior:"smooth" });
+    }, 300);
   });
 
-  // WhatsApp
+  // 💬 WhatsApp
   document.getElementById("form").addEventListener("submit", (e) => {
     e.preventDefault();
 
     const nombre = document.getElementById("nombre").value;
     const plato = document.getElementById("plato").value;
 
-    const mensaje = `🎉 Confirmación de asistencia
+    const mensaje = `🎉 *Confirmación de asistencia*
 
 👤 ${nombre}
 🍽️ ${plato}
 
 ✨ ¡Nos vemos en la fiesta!`;
 
-    window.open(
-      `https://wa.me/51958680138?text=${encodeURIComponent(mensaje)}`,
-      "_blank"
-    );
+    const url = `https://wa.me/51958680138?text=${encodeURIComponent(mensaje)}`;
+    window.location.href = url;
   });
 
 });
